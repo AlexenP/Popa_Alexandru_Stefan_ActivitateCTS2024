@@ -1,4 +1,4 @@
-package Main;
+package main;
 
 import classes.PersonalSpital;
 import classes.fabricaPersonal.FabricaPersonal;
