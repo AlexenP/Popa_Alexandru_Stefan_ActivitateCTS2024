@@ -19,6 +19,12 @@ public class Main {
         System.out.println(pacient1);
         System.out.println(pacient2);
 
-        //TODO builder implicat
+
+        builder_implicat_in_clasa.Pacient pacient3 = new builder_implicat_in_clasa.Pacient.PacientBuilder()
+                .setPatRabatabil(true)
+                .setPapuciDeCamera(true)
+                .build();
+        System.out.println("Builder implicat");
+        System.out.println(pacient3);
     }
 }
