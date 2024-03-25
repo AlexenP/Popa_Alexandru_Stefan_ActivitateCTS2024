@@ -17,6 +17,7 @@ public class Main {
         fabricaMedic.createPersonal("Alex Cristoiu",3000);
         fabricaAsistent.createPersonal("Cristi Ion",7000);
         fabricaBrancardier.createPersonal("Albert Stan",9000);
+
         prelucrarePersonal(new FabricaMedic(),"Ion Ion",70000);
         prelucrarePersonal(new FabricaInfirmier(),"Ion Georgeta",8500);
 
