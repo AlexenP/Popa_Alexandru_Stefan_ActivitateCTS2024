@@ -10,6 +10,33 @@ public class Client implements ClientInterface{
     // numele supei + pret
     private Map<String,Integer> supe;
 
+    public void setSupe(Map<String, Integer> supeMap) {
+        if (this.supe == null){
+            this.supe = new HashMap<>();
+        }
+        for(String supa:supeMap.keySet()){
+            this.supe.put(supa,supeMap.get(supa));
+        }
+
+    }
+
+    public Client() {
+        this.nume="Necunoscut";
+        this.bacsisStandard=0;
+        this.supaPreferata=TipSupa.SUPA_DE_CIUPERCI;
+        this.supe = null;
+    }
+
+    @Override
+    public ClientInterface clone() {
+        Client abstracta = new Client();
+        abstracta.setNume(this.nume);
+        abstracta.setSupaPreferata(this.supaPreferata);
+        abstracta.setBacsisStandard(this.bacsisStandard);
+        abstracta.setSupe(this.supe);
+        return abstracta;
+    }
+
     public Client(String nume, TipSupa supaPreferata, int bacsisStandard, Map<String, Integer> supe) {
         this.nume = nume;
         this.supaPreferata = supaPreferata;
@@ -45,32 +72,7 @@ public class Client implements ClientInterface{
         return supe;
     }
 
-    public void setSupe(Map<String, Integer> supeMap) {
-        if (this.supe == null){
-            this.supe = new HashMap<>();
-        }
-        for(String supa:supeMap.keySet()){
-            this.supe.put(supa,supeMap.get(supa));
-        }
 
-    }
-
-    public Client() {
-        this.nume="Necunoscut";
-        this.bacsisStandard=0;
-        this.supaPreferata=TipSupa.SUPA_DE_CIUPERCI;
-        this.supe = null;
-    }
-
-    @Override
-    public ClientInterface clone() {
-        Client abstracta = new Client();
-        abstracta.setNume(this.nume);
-        abstracta.setSupaPreferata(this.supaPreferata);
-        abstracta.setBacsisStandard(this.bacsisStandard);
-        abstracta.setSupe(this.supe);
-        return abstracta;
-    }
 
     @Override
     public String toString() {

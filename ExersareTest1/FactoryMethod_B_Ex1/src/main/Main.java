@@ -24,8 +24,5 @@ public class Main {
 
         afisareDetalii(new FactorySupaCiuperci(), "Ciupe",140);
         afisareDetalii(new FactorySupaVita(), "Vitica",290);
-
-
-
     }
 }

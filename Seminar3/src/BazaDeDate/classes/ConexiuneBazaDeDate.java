@@ -13,6 +13,13 @@ public class ConexiuneBazaDeDate {
         this.linkConexiune = linkConexiune;
     }
 
+    // syncronized = thread save, sigura pentru lucrul pe thread-uri, blocheaza accesul pt un singur fir de executie
+    public static synchronized ConexiuneBazaDeDate getInstance(String numeBaza, int nrTabele, String linkConexiune) {
+        if (instanta == null) {
+            instanta = new ConexiuneBazaDeDate(numeBaza, nrTabele, linkConexiune);
+        }
+        return instanta;
+    }
     @Override
     public String toString() {
         final StringBuffer sb = new StringBuffer("ConexiuneBazaDeDate{");
@@ -24,13 +31,7 @@ public class ConexiuneBazaDeDate {
     }
 
 
-    // syncronized = thread save, sigura pentru lucrul pe thread-uri, blocheaza accesul pt un singur fir de executie
-    public static synchronized ConexiuneBazaDeDate getInstance(String numeBaza, int nrTabele, String linkConexiune) {
-        if (instanta == null) {
-            instanta = new ConexiuneBazaDeDate(numeBaza, nrTabele, linkConexiune);
-        }
-        return instanta;
-    }
+
 
     public String getNumeBaza() {
         return numeBaza;

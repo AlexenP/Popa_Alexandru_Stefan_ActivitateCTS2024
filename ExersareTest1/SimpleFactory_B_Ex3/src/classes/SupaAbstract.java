@@ -8,6 +8,7 @@ public abstract class SupaAbstract {
         this.nume = nume;
         this.calorii = calorii;
     }
+    public abstract void descriere();
 
     public String getNume() {
         return nume;
@@ -25,5 +26,5 @@ public abstract class SupaAbstract {
         this.calorii = calorii;
     }
 
-    public abstract void descriere();
+
 }
