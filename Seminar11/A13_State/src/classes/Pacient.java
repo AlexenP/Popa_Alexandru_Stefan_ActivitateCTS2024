@@ -9,18 +9,6 @@ public class Pacient {
         stare= new Internat();
     }
 
-    public String getNume() {
-        return nume;
-    }
-
-    public void setNume(String nume) {
-        this.nume = nume;
-    }
-
-    public Stare getStare() {
-        return stare;
-    }
-
     // PROTECTED
     protected void setStare(Stare stare) {
 
